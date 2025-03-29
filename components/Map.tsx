@@ -1,12 +1,19 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import Script from 'next/script';
+import { useEffect, useRef } from "react";
+import Script from "next/script";
 
 interface GoogleMapsType {
   maps: {
-    Map: new (element: HTMLElement, options: { center: { lat: number; lng: number }; zoom: number }) => any;
-    Marker: new (options: { position: { lat: number; lng: number }; map: any; title?: string }) => any;
+    Map: new (
+      element: HTMLElement,
+      options: { center: { lat: number; lng: number }; zoom: number }
+    ) => any;
+    Marker: new (options: {
+      position: { lat: number; lng: number };
+      map: any;
+      title?: string;
+    }) => any;
   };
 }
 
@@ -32,11 +39,11 @@ export default function Map() {
         new window.google.maps.Marker({
           position: { lat: 26.9124, lng: 75.7873 },
           map: map,
-          title: "IndisInc"
+          title: "Indis Inc",
         });
       };
 
-      if (typeof window.google !== 'undefined') {
+      if (typeof window.google !== "undefined") {
         initMap();
       } else {
         window.initMap = initMap;

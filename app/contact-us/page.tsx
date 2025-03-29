@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us | IndisInc.",
+  title: "Contact Us | Indis Inc.",
   description:
     "Get in touch with us for inquiries, orders, or any questions about our products",
 };

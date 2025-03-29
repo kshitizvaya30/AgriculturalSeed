@@ -2,7 +2,7 @@ import ProductList from "@/components/product-list";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Products | IndisInc.",
+  title: "Products | Indis Inc.",
   description: "Explore our range of premium agricultural products",
 };
 

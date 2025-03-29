@@ -25,7 +25,7 @@ export default function Footer() {
                 priority
                 className="brightness-[0.85] mr-3"
               />
-              <span className="text-xl font-bold">IndisInc.</span>
+              <span className="text-xl font-bold">Indis Inc.</span>
             </div>
             <p className="text-gray-400 mb-6">
               Premium supplier of high-quality soya bean DOC, flax seeds, and
@@ -193,7 +193,7 @@ export default function Footer() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} IndisInc.. All rights reserved.
+              © {new Date().getFullYear()} Indis Inc.. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <Link

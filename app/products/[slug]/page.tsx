@@ -25,7 +25,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${product.name} | IndisInc.`,
+    title: `${product.name} | Indis Inc.`,
     description: product.description,
   };
 }

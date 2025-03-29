@@ -8,7 +8,7 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "IndisInc. - Premium Agricultural Products",
+  title: "Indis Inc. - Premium Agricultural Products",
   description:
     "Supplier of high-quality soya bean DOC, flax seeds, and chia seeds",
   generator: "v0.dev",

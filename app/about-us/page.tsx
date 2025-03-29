@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | IndisInc.",
+  title: "About Us | Indis Inc.",
   description:
     "Learn about our journey, mission, and commitment to quality agricultural products",
 };
@@ -29,7 +29,7 @@ export default function AboutUsPage() {
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <p className="text-gray-700 mb-4">
-              IndisInc. was founded in 2024 with a vision to provide
+              Indis Inc. was founded in 2024 with a vision to provide
               high-quality agricultural products while supporting sustainable
               farming practices. What began as a small family business has grown
               into a trusted supplier of premium soya bean DOC, flax seeds, and

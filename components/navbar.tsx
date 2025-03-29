@@ -97,8 +97,8 @@ export default function Navbar() {
                     priority
                     className="brightness-[0.85] mr-3"
                   />
-                  <span className="text-xl font-bold text-green-600">
-                    IndisInc.
+                  <span className="text-xl font-bold text-[#0b2059]">
+                    Indis Inc.
                   </span>
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function Navbar() {
               priority
               className="brightness-[0.85] mr-3"
             />
-            <span className="text-xl font-bold text-green-600">IndisInc.</span>
+            <span className="text-xl font-bold text-[#0b2059]">Indis Inc.</span>
           </Link>
           <Button variant="ghost" onClick={() => setIsMenuOpen(false)}>
             <X className="h-6 w-6" />
