@@ -208,7 +208,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">
-                Nationwide Delivery
+                Nationwide Delivery and International Shipping
               </h3>
               <p className="text-gray-600">
                 Fast and reliable shipping to your doorstep

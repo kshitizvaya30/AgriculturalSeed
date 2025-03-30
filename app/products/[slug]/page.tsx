@@ -7,16 +7,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, CheckCircle, Download } from "lucide-react";
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   // In a real app, you would fetch this data from an API or database
-  const product = getProductData(params.slug);
+  const resolvedParams = await params;
+  const product = await getProductData(resolvedParams.slug);
 
   if (!product) {
     return {
@@ -31,7 +33,7 @@ export async function generateMetadata({
 }
 
 // This would typically come from an API or database
-function getProductData(slug: string) {
+async function getProductData(slug: string) {
   const products = {
     "soya-bean": {
       name: "Premium Soya Bean DOC",
@@ -225,8 +227,9 @@ function getProductData(slug: string) {
   return products[slug as keyof typeof products];
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = getProductData(params.slug);
+export default async function ProductPage({ params }: ProductPageProps) {
+  const resolvedParams = await params;
+  const product = await getProductData(resolvedParams.slug);
 
   if (!product) {
     notFound();
@@ -307,8 +310,8 @@ export default function ProductPage({ params }: ProductPageProps) {
               </div>
 
               <div className="flex flex-col space-y-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700">
-                  Request a Quote
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 w-full">
+                  <Link href="/contact-us" className="w-full">Request a Quote</Link>
                 </Button>
                 <Button
                   variant="outline"

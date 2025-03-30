@@ -190,8 +190,8 @@ export default function AboutUsPage() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Distribution</h3>
             <p className="text-gray-600">
-              We deliver our products nationwide, ensuring they reach you in
-              perfect condition.
+              We deliver our products nationwide as well as internationally,
+              ensuring they reach you in perfect condition.
             </p>
           </div>
         </div>
