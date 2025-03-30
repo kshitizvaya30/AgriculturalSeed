@@ -49,7 +49,7 @@ export default function AboutUsPage() {
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden">
             <Image
-              src="/placeholder.svg?height=400&width=600"
+              src="/OurStory.jpg?height=400&width=600"
               alt="Our farm"
               fill
               className="object-cover"
