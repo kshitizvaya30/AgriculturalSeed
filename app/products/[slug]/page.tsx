@@ -6,6 +6,22 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, CheckCircle, Download } from "lucide-react";
 
+interface ProductData {
+  name: string;
+  description: string;
+  longDescription: string;
+  benefits: string[];
+  applications: string[];
+  specifications: Record<string, string>;
+  category: string;
+  images: string[];
+  carouselSection?: {
+    heading: string;
+    subheading: string;
+    images: string[];
+  };
+}
+
 interface ProductPageProps {
   params: Promise<{
     slug: string;
@@ -33,7 +49,7 @@ export async function generateMetadata({
 }
 
 // This would typically come from an API or database
-async function getProductData(slug: string) {
+async function getProductData(slug: string): Promise<ProductData | undefined> {
   const products = {
     "soya-bean": {
       name: "Premium Soya Bean DOC",
@@ -69,6 +85,17 @@ async function getProductData(slug: string) {
         "/Soyabean/Soyabean3.png?height=600&width=800",
         "/Soyabean/Soyabean4.png?height=600&width=800",
       ],
+      carouselSection: {
+        heading: "Processing & Quality",
+        subheading:
+          "Our state-of-the-art processing ensures consistent quality in every batch",
+        images: [
+          "/SoyaFactory/soyaFactory5.jpg?height=600&width=800",
+          "/SoyaFactory/soyaFactory2.jpg?height=600&width=800",
+          "/SoyaFactory/soyaFactory3.jpg?height=600&width=800",
+          "/SoyaFactory/soyaFactory4.jpg?height=600&width=800",
+        ],
+      },
     },
     "flax-seeds": {
       name: "Organic Flax Seeds",
@@ -103,10 +130,20 @@ async function getProductData(slug: string) {
       category: "Seeds",
       images: [
         "/FlaxSeed/FlaxSeedMain.png?height=600&width=800",
-        "/FlaxSeed.png?height=600&width=800",
+        "/FlaxSeed/FlaxSeed1.jpeg?height=600&width=800",
         "/FlaxSeed/FlaxSeed5.png?height=600&width=800",
         "/FlaxSeed/FlaxSeed4.png?height=600&width=800",
       ],
+      carouselSection: {
+        heading: "Farm to Table Journey",
+        subheading: "Follow our flax seeds from cultivation to packaging",
+        images: [
+          "/FlaxSeedFactory/1.jpg?height=600&width=800",
+          "/FlaxSeedFactory/5.jpg?height=600&width=800",
+          "/FlaxSeedFactory/2.jpg?height=600&width=800",
+          "/FlaxSeedFactory/3.jpg?height=600&width=800",
+        ],
+      },
     },
     "chia-seeds": {
       name: "Nutrient-Dense Chia Seeds",
@@ -145,6 +182,17 @@ async function getProductData(slug: string) {
         "/ChiaSeed/chiaSeeds3.png?height=600&width=800",
         "/ChiaSeed/chiaSeeds2.png?height=600&width=800",
       ],
+      carouselSection: {
+        heading: "Nutritional Benefits",
+        subheading:
+          "Discover the health benefits and versatile uses of chia seeds",
+        images: [
+          "/ChiaSeedsFactory/1.jpg?height=600&width=800",
+          "/ChiaSeedsFactory/2.jpg?height=600&width=800",
+          "/ChiaSeedsFactory/3.jpg?height=600&width=800",
+          "/ChiaSeedsFactory/4.jpeg?height=600&width=800",
+        ],
+      },
     },
     "kalonji-seeds": {
       name: "Premium Kalonji Seeds",
@@ -183,6 +231,17 @@ async function getProductData(slug: string) {
         "/KalonjiSeed/kalonji3.png?height=600&width=800",
         "/KalonjiSeed/kalonji4.png?height=600&width=800",
       ],
+      carouselSection: {
+        heading: "Traditional Uses",
+        subheading:
+          "Explore the traditional and modern applications of kalonji seeds",
+        images: [
+          "/ChiaSeedsFactory/1.jpg?height=600&width=800",
+          "/ChiaSeedsFactory/2.jpg?height=600&width=800",
+          "/ChiaSeedsFactory/3.jpg?height=600&width=800",
+          "/ChiaSeedsFactory/4.jpeg?height=600&width=800",
+        ],
+      },
     },
     "mustard-seeds": {
       name: "Premium Mustard Seeds",
@@ -216,11 +275,58 @@ async function getProductData(slug: string) {
       },
       category: "Seeds",
       images: [
-        "/MustardSeed/mustardSeed1.png?height=600&width=800",
-        "/MustardSeed/mustardSeed2.png?height=600&width=800",
-        "/MustardSeed/mustardSeed3.png?height=600&width=800",
-        "/MustardSeed/mustardSeed4.png?height=600&width=800",
+        "/ChiaSeedsFactory/1.jpg?height=600&width=800",
+        "/ChiaSeedsFactory/2.jpg?height=600&width=800",
+        "/ChiaSeedsFactory/3.jpg?height=600&width=800",
+        "/ChiaSeedsFactory/4.jpeg?height=600&width=800",
       ],
+    },
+    "cow-dung": {
+      name: "Premium Cow Dung / Powder",
+      description:
+        "Rich in organic nutrients and beneficial microorganisms, available in various forms for agricultural, composting, and natural fertilizing uses.",
+      longDescription:
+        "Our Premium Cow Dung / Powder is sourced from healthy, well-maintained cows and carefully processed to provide a natural, nutrient-rich product for a variety of uses. It can be used in agriculture to enhance soil health, in organic composting, and as a natural fertilizer for gardening. Cow dung is rich in organic matter and contains essential nutrients like nitrogen, phosphorus, and potassium, making it an excellent choice for enriching soil fertility. The product is also used in various traditional and eco-friendly applications, such as fuel and in making natural pest repellents. We ensure that our cow dung is free from harmful chemicals and undergoes a strict drying process to ensure purity and quality for long-term storage and export standards.",
+      benefits: [
+        "Rich in organic nutrients and beneficial microorganisms",
+        "High in nitrogen, phosphorus, and potassium for soil enrichment",
+        "Suitable for agricultural, gardening, and composting purposes",
+        "Natural fertilizer free from harmful chemicals or additives",
+        "Ideal for enhancing soil health and promoting plant growth",
+        "Strict drying process ensures impurity-free product and long shelf life",
+      ],
+      applications: [
+        "Used as an organic fertilizer for improving soil fertility",
+        "Key ingredient in composting and organic gardening",
+        "Can be used as a natural fuel source in rural areas",
+        "Incorporated into traditional pest control and repellent formulations",
+        "Suitable for use in various eco-friendly, organic farming practices",
+      ],
+      specifications: {
+        purity: "100% organic, free from chemicals and harmful additives",
+        nutrientContent: "High in nitrogen, phosphorus, and potassium",
+        moisture: "Optimally dried to prevent spoilage",
+        microbialContent: "Rich in beneficial microorganisms for soil health",
+        packaging: "10kg, 25kg, 50kg bags or as per requirement",
+      },
+      category: "Organic Fertilizers",
+      images: [
+        "/CowDung/cowDung1.jpg?height=600&width=800",
+        "/CowDung/cowDung2.jpg?height=600&width=800",
+        "/CowDung/cowDung3.jpeg?height=600&width=800",
+        "/CowDung/cowDung4.jpg?height=600&width=800",
+      ],
+      carouselSection: {
+        heading: "Product Applications",
+        subheading:
+          "See how our products are used in various agricultural settings",
+        images: [
+          "/CowDungFactory/1.jpg?height=600&width=800",
+          "/CowDungFactory/2.jpeg?height=600&width=800",
+          "/CowDungFactory/3.jpg?height=600&width=800",
+          "/CowDung/cowDung4.jpg?height=600&width=800",
+        ],
+      },
     },
   };
 
@@ -310,9 +416,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
 
               <div className="flex flex-col space-y-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 w-full">
-                  <Link href="/contact-us" className="w-full">Request a Quote</Link>
-                </Button>
+                <Link href="/contact-us" className="w-full">
+                  <Button
+                    size="lg"
+                    className="bg-green-600 hover:bg-green-700 w-full"
+                  >
+                    Request a Quote
+                  </Button>
+                </Link>
                 <Button
                   variant="outline"
                   size="lg"
@@ -364,6 +475,39 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
           </TabsContent>
         </Tabs>
+
+        {product.carouselSection && (
+          <div className="mt-12 border-t pt-8">
+            <h3 className="text-xl font-medium mb-2">
+              {product.carouselSection.heading}
+            </h3>
+            <p className="text-gray-600 mb-6">
+              {product.carouselSection.subheading}
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {product.carouselSection.images.map(
+                (image: string, index: number) => (
+                  <div
+                    key={index}
+                    className="border rounded-lg overflow-hidden cursor-pointer hover:border-green-500 transition-colors"
+                  >
+                    <div className="relative aspect-square">
+                      <Image
+                        src={image || "/placeholder.svg"}
+                        alt={`${product.carouselSection?.heading} view ${
+                          index + 1
+                        }`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       <section className="bg-green-50 py-12">
@@ -374,9 +518,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
             any questions about our products.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700">
-              <Link href="/contact-us">Contact Us</Link>
-            </Button>
+            <Link href="/contact-us">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700">
+                Contact Us
+              </Button>
+            </Link>
             <Button
               variant="outline"
               size="lg"

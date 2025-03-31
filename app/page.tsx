@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/product-card";
 import BannerSection from "@/components/banner-section";
+import ImageCarousel from "@/components/image-carousel";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -36,6 +37,13 @@ export default function Home() {
       name: "Premium Mustard Seeds",
       description: "Rich in oil content and essential nutrients",
       image: "/MustardSeed/mustardSeed1.png?height=400&width=600",
+    },
+    {
+      id: "cow-dung",
+      name: "Premium Cow Dung / Powder",
+      description:
+        "Rich in nitrogen, phosphorus, and potassium, and beneficial microorganisms.",
+      image: "/CowDung/cowDung1.jpg?height=400&width=600",
     },
   ];
 
@@ -106,6 +114,61 @@ export default function Home() {
         buttonText="Contact Us"
         buttonLink="/contact-us"
       />
+
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              State-of-the-Art Manufacturing Facility
+            </h2>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Welcome to our cutting-edge agricultural processing facility,
+                where tradition meets innovation. Our state-of-the-art factory
+                combines advanced technology with sustainable practices to
+                deliver premium quality agricultural products. Equipped with the
+                latest processing machinery and stringent quality control
+                systems, we ensure every product meets international standards.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                From careful seed selection to advanced processing techniques,
+                our facility maintains optimal conditions throughout the
+                production cycle. Our dedicated team of experts oversees each
+                stage, ensuring consistent quality and nutritional value. With a
+                commitment to sustainability, we've implemented eco-friendly
+                practices and energy-efficient systems, making us a leader in
+                responsible agricultural processing.
+              </p>
+            </div>
+            <div className="mt-8 text-gray-700 font-medium">
+              <p>
+                <span className="font-bold">Factory Address:</span> Neemuch ,
+                Madhya Pradesh, India
+              </p>
+            </div>
+          </div>
+          <ImageCarousel
+            images={[
+              {
+                src: "/Factory/1.jpg?height=600&width=1200",
+                alt: "Our state-of-the-art processing facility",
+              },
+              {
+                src: "/Factory/3.jpg?height=600&width=1200",
+                alt: "Quality control process",
+              },
+              {
+                src: "/Factory/11.jpg?height=600&width=1200",
+                alt: "Storage and packaging facility",
+              },
+              {
+                src: "/Factory/Fac1.jpg?height=600&width=1200",
+                alt: "Product testing laboratory",
+              },
+            ]}
+          />
+        </div>
+      </section>
 
       <section className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -213,6 +276,79 @@ export default function Home() {
               <p className="text-gray-600">
                 Fast and reliable shipping to your doorstep
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Empowering Farmers
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Supporting agricultural communities with high-quality products and
+              sustainable farming practices
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/FarmerPhotos/5.jpg"
+                alt="Quality Seeds for Farmers"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-4">
+                <h3 className="text-white font-semibold">Quality Seeds</h3>
+                <p className="text-white/80 text-sm">
+                  Premium seeds for better yields
+                </p>
+              </div>
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/FarmerPhotos/2.jpeg"
+                alt="Sustainable Farming Practices"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-4">
+                <h3 className="text-white font-semibold">
+                  Sustainable Farming
+                </h3>
+                <p className="text-white/80 text-sm">
+                  Eco-friendly agricultural solutions
+                </p>
+              </div>
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/SoyaFactory/soyaFactory2.jpg"
+                alt="Modern Processing"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-4">
+                <h3 className="text-white font-semibold">Modern Processing</h3>
+                <p className="text-white/80 text-sm">
+                  State-of-the-art facilities
+                </p>
+              </div>
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/FarmerPhotos/4.jpg"
+                alt="Organic Solutions"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-4">
+                <h3 className="text-white font-semibold">Organic Solutions</h3>
+                <p className="text-white/80 text-sm">
+                  Natural farming products
+                </p>
+              </div>
             </div>
           </div>
         </div>

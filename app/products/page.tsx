@@ -10,10 +10,10 @@ export default function ProductsPage() {
   const products = [
     {
       id: "soya-bean",
-      name: "Premium Soya Bean DOC",
-      description: "High-protein soya bean DOC for optimal nutrition",
+      name: "Premium Soya Bean",
+      description: "High-protein soya bean for optimal nutrition",
       image: "/Soyabean.png?height=400&width=600",
-      category: "Beans",
+      category: "Meal",
     },
     {
       id: "flax-seeds",
@@ -42,6 +42,14 @@ export default function ProductsPage() {
       description: "Rich in oil content and essential nutrients",
       image: "/MustardSeed/mustardSeed3.png?height=400&width=600",
       category: "Seeds",
+    },
+    {
+      id: "cow-dung",
+      name: "Premium Cow Dung / Powder",
+      description:
+        "Rich in Nitrogen, Phosphorus, and Potassium, and Beneficial Microorganisms.",
+      image: "/CowDung/cowDung1.jpg?height=400&width=600",
+      category: "Dung",
     },
   ];
 
