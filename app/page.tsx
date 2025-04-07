@@ -141,14 +141,11 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-8 text-gray-700 font-medium">
-              <p>
-                <span className="font-bold">Factory Address:</span>
-                Madhya Pradesh, India
-              </p>
-              <p>
-                <span className="font-bold">Factory Address:</span>
-                C-16,17 Star Gold Industrial Park, Kuha, Ahmedabad
-              </p>
+              <h2 className="text-xl font-bold mb-4">Our Factory Locations</h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li>C-16,17 Star Gold Industrial Park, Kuha, Ahmedabad</li>
+                <li>Madhya Pradesh, India</li>
+              </ul>
             </div>
           </div>
           <ImageCarousel
