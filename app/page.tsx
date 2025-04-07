@@ -142,8 +142,12 @@ export default function Home() {
             </div>
             <div className="mt-8 text-gray-700 font-medium">
               <p>
-                <span className="font-bold">Factory Address:</span> Neemuch ,
+                <span className="font-bold">Factory Address:</span>
                 Madhya Pradesh, India
+              </p>
+              <p>
+                <span className="font-bold">Factory Address:</span>
+                C-16,17 Star Gold Industrial Park, Kuha, Ahmedabad
               </p>
             </div>
           </div>
