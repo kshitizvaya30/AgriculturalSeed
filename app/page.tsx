@@ -7,6 +7,49 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
+  const exportCountries = [
+    {
+      name: "Oman",
+      flag: "/flags/Oman3.png",
+      hoverColor: "hover:bg-[rgba(223,26,35,0.8)]",
+    },
+    {
+      name: "Saudi Arabia",
+      flag: "/flags/Saudi.png",
+      hoverColor: "hover:bg-[rgba(0,128,0,0.8)]",
+    },
+    {
+      name: "Vietnam",
+      flag: "/flags/Vietnam.png",
+      hoverColor: "hover:bg-[rgba(217,36,28,0.8)]",
+    },
+    {
+      name: "Dubai, UAE",
+      flag: "/flags/UAE.png",
+      hoverColor: "hover:bg-[rgba(0,115,47,0.8)]",
+    },
+    {
+      name: "Malaysia",
+      flag: "/flags/Malaysia.png",
+      hoverColor: "hover:bg-[rgba(0,0,102,0.8)]",
+    },
+    {
+      name: "Bangladesh",
+      flag: "/flags/Bangladesh.png",
+      hoverColor: "hover:bg-[rgba(0,105,77,0.8)]",
+    },
+    {
+      name: "Indonesia",
+      flag: "/flags/Indonesia.png",
+      hoverColor: "hover:bg-[rgba(255,0,0,0.8)]",
+    },
+    {
+      name: "Qatar",
+      flag: "/flags/Qatar2.jpg",
+      hoverColor: "hover:bg-[rgba(122,14,48,0.8)]",
+    },
+  ];
+
   const featuredProducts = [
     {
       id: "soya-bean",
@@ -352,6 +395,40 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <section className="py-12 md:py-20 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Our Global Reach
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  We proudly export our premium agricultural products to these
+                  countries
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                {exportCountries.map((country, index) => (
+                  <div
+                    key={index}
+                    className={`flex flex-col items-center p-4 bg-gray-50 ${country.hoverColor} transition-colors duration-300 rounded-lg shadow-sm h-[160px] justify-between`}
+                  >
+                    <div className="h-[80px] flex items-center justify-center">
+                      <Image
+                        src={country.flag}
+                        alt={`${country.name} Flag`}
+                        width={80}
+                        height={60}
+                        className="object-contain"
+                      />
+                    </div>
+                    <span className="font-medium text-center">
+                      {country.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
       </section>
     </>
